@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09246AF01BD400040027D034 /* libboost_regex.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 09246AEF1BD400040027D034 /* libboost_regex.dylib */; settings = {ASSET_TAGS = (); }; };
 		09E3629E1BD2AE81004DDA1C /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09E3629D1BD2AE81004DDA1C /* main.cpp */; };
+		09E362A61BD2AF4D004DDA1C /* Reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09E362A41BD2AF4D004DDA1C /* Reader.cpp */; settings = {ASSET_TAGS = (); }; };
+		09E362A91BD2C19A004DDA1C /* Word.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09E362A71BD2C19A004DDA1C /* Word.cpp */; settings = {ASSET_TAGS = (); }; };
+		09F7E0321BD6B3F900813AE6 /* Porter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 09F7E0301BD6B3F900813AE6 /* Porter.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +27,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09246AEF1BD400040027D034 /* libboost_regex.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libboost_regex.dylib; sourceTree = "<group>"; };
 		09E3629A1BD2AE81004DDA1C /* CheckWords */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CheckWords; sourceTree = BUILT_PRODUCTS_DIR; };
 		09E3629D1BD2AE81004DDA1C /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		09E362A41BD2AF4D004DDA1C /* Reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Reader.cpp; sourceTree = "<group>"; };
+		09E362A51BD2AF4D004DDA1C /* Reader.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Reader.hpp; sourceTree = "<group>"; };
+		09E362A71BD2C19A004DDA1C /* Word.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Word.cpp; sourceTree = "<group>"; };
+		09E362A81BD2C19A004DDA1C /* Word.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Word.hpp; sourceTree = "<group>"; };
+		09F7E0301BD6B3F900813AE6 /* Porter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Porter.cpp; sourceTree = "<group>"; };
+		09F7E0311BD6B3F900813AE6 /* Porter.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Porter.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09246AF01BD400040027D034 /* libboost_regex.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +53,7 @@
 		09E362911BD2AE80004DDA1C = {
 			isa = PBXGroup;
 			children = (
+				09246AEF1BD400040027D034 /* libboost_regex.dylib */,
 				09E3629C1BD2AE81004DDA1C /* CheckWords */,
 				09E3629B1BD2AE81004DDA1C /* Products */,
 			);
@@ -58,6 +71,12 @@
 			isa = PBXGroup;
 			children = (
 				09E3629D1BD2AE81004DDA1C /* main.cpp */,
+				09E362A71BD2C19A004DDA1C /* Word.cpp */,
+				09E362A81BD2C19A004DDA1C /* Word.hpp */,
+				09E362A41BD2AF4D004DDA1C /* Reader.cpp */,
+				09E362A51BD2AF4D004DDA1C /* Reader.hpp */,
+				09F7E0301BD6B3F900813AE6 /* Porter.cpp */,
+				09F7E0311BD6B3F900813AE6 /* Porter.hpp */,
 			);
 			path = CheckWords;
 			sourceTree = "<group>";
@@ -118,7 +137,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09E362A91BD2C19A004DDA1C /* Word.cpp in Sources */,
+				09E362A61BD2AF4D004DDA1C /* Reader.cpp in Sources */,
 				09E3629E1BD2AE81004DDA1C /* main.cpp in Sources */,
+				09F7E0321BD6B3F900813AE6 /* Porter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +227,12 @@
 		09E362A21BD2AE81004DDA1C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/Cellar/boost/1.58.0/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/Cellar/boost/1.58.0/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -212,6 +240,12 @@
 		09E362A31BD2AE81004DDA1C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"HEADER_SEARCH_PATHS[arch=*]" = /usr/local/Cellar/boost/1.58.0/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				"LIBRARY_SEARCH_PATHS[arch=*]" = /usr/local/Cellar/boost/1.58.0/lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -235,6 +269,7 @@
 				09E362A31BD2AE81004DDA1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
